@@ -31,10 +31,7 @@ public class CreateLoginForm extends JFrame implements ActionListener {
         setTitle("Login Form");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(panel, BorderLayout.CENTER);
-
-
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         String userValue = username.getText();
@@ -62,4 +59,3 @@ public class CreateLoginForm extends JFrame implements ActionListener {
         }
         }
     }
-

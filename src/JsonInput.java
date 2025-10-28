@@ -6,8 +6,8 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 import org.json.simple.JSONValue;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+//import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.ParseException;
 import org.json.simple.JSONArray;
 //import org.json.simple.JSONException;
 import org.json.simple.JSONObject;
@@ -20,7 +20,7 @@ public class JsonInput {
         accounts = deserializeAccounts();
     }
     public static ArrayList<Account> deserializeAccounts() {
-        String accountPath = "C:\\Users\\ioana maraloi\\Desktop\\oop-java-intelij\\tema-part1\\accounts.json";
+        String accountPath = "src/accounts.json";
         try {
             String content = new String((Files.readAllBytes(Paths.get(accountPath))));
             Object obj = JSONValue.parse(content);
@@ -35,7 +35,7 @@ public class JsonInput {
                 int gamesNumber = Integer.parseInt((String)accountJson.get("maps_completed"));
 
                 // Credentials
-                Credentials credentials = null;
+                Credentials credentials;
                 JSONObject credentialsJson = (JSONObject) accountJson.get("credentials");
                 String email = (String) credentialsJson.get("email");
                 String password = (String) credentialsJson.get("password");
